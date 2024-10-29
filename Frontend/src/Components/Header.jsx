@@ -1,7 +1,11 @@
 import React from "react";
+import { BiMenuAltRight } from "react-icons/bi";
 
 const Header = () => {
   return (
+    <section>
+
+   
     <div className="flex gap-72 justify-center align-middle  text-white py-7">
         <div className="flex gap-2">
             <img className="size-9" src="./public/logo.png" alt="logo" />
@@ -17,6 +21,10 @@ const Header = () => {
         </button>
       </div>
     </div>
+    <div className="hidden md:visible">
+    <BiMenuAltRight color="white" />
+    </div>
+    </section>
   );
 };
 

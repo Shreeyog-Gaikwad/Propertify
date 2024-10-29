@@ -1,6 +1,7 @@
 import React from 'react';
 import { IoLocation } from "react-icons/io5";
 import CountUp from "react-countup"
+import {motion} from "framer-motion" 
 
 const Hero = () => {
   return (
@@ -11,7 +12,14 @@ const Hero = () => {
           <div>
             <div className='relative z-[1]'>
                 <div className='w-16 h-16 bg-gradient-to-r from-[#fa7e0a] to-[#f1c8a1] rounded-full absolute right-[28%] top-[-12%] z-[-1]'></div>
-                <h1 className='text-6xl font-semibold leading-[4rem]'>Discover <br /> Most Suitable <br /> Property</h1>
+                <motion.h1 className='text-6xl font-semibold leading-[4rem]'
+                initial = {{y: "2rem", opacity: 0}}
+                animate = {{y: 0, opacity: 1}}
+                transition={{
+                  duration:2,
+                  type:  "spring"
+                }}
+                >Discover <br /> Most Suitable <br /> Property</motion.h1>
             </div>
           </div>
           <div className='w-[410px] text-gray-400'>
@@ -54,17 +62,55 @@ const Hero = () => {
               <span className='text-sm text-gray-300'>Award Winnings</span>
             </div>
           </div>
-        </div>
+        </div>                                                                                                                                                       
         
         <div className="flex justify-center w-1/2 pb-10">
-          <div className="w-96 h-full rounded-t-full overflow-hidden border-8 border-gray-800">
+          <motion.div className="w-96 h-full rounded-t-full overflow-hidden border-8 border-gray-800"
+          initial = {{x: "7rem", opacity: 0}}
+          animate = {{x: 0, opacity: 1}}
+          transition={{
+            duration:2,
+            type:  "spring"
+          }}
+          >
             <img className="w-full h-full object-cover" src="./public/hero-image.png" alt="Hero" />
-          </div>
+          </motion.div>
         </div>
 
       </div>
     </div>
   );
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+
 
 export default Hero;
